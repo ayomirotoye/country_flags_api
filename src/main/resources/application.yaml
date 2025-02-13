@@ -1,0 +1,18 @@
+server:
+  port: 23000
+
+spring:
+  application:
+    name: country_flag_api
+  logging:
+    level:
+      root: INFO
+      com.example: DEBUG
+  profiles:
+    active: dev
+
+api:
+  country-flag:
+    country-data-provider-url: "https://api.api-ninjas.com/v1"
+    country-data-provider-url-2: "https://countriesnow.space"
+    api-ninja-key: "gbbRJspHBSE7eVWOtWzuaQ==pgFOb5TC7i0pkHlW"
