@@ -29,7 +29,7 @@ This API allows you to retrieve data about countries, such as their names, flags
 
 ### Running the Application (without Docker)
 
-1. After building, you can run the application: `./gradlew bootRun`
+1. After building, you can run the application: `./gradlew bootRun -DALLOWED_ORIGINS=http://localhost:5173`
 
 ### Running the Dockerized Application
 

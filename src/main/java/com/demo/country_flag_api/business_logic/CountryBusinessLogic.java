@@ -35,7 +35,7 @@ public class CountryBusinessLogic implements ICountryBusinessLogic {
 
     @Override
     public ResponseWrapper<Country> getCountriesAndFlags(CountryRequestDto countryRequestDto, String cursor) {
-        UriComponentsBuilder builder = UriComponentsBuilder.fromPath("/api/v0.1/countries/flag/unicode");
+        UriComponentsBuilder builder = UriComponentsBuilder.fromPath("/api/v0.1/countries/flag/images");
         return countryClient2
                 .get()
                 .uri(builder.build().toUri())

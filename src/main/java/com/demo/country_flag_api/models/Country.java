@@ -1,5 +1,6 @@
 package com.demo.country_flag_api.models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -10,7 +11,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public record Country(
         double gdp,
-        String unicodeFlag,
+        String flagUrl,
         @JsonProperty("sex_ratio") double sexRatio,
         @JsonProperty("surface_area") double surfaceArea,
         @JsonProperty("life_expectancy_male") double lifeExpectancyMale,
@@ -54,14 +55,14 @@ public record Country(
         return data.stream().map(sparseCountryInfo ->
                 Country.builder()
                         .name(sparseCountryInfo.name())
-                        .unicodeFlag(sparseCountryInfo.unicodeFlag())
+                        .flagUrl(sparseCountryInfo.flagUrl())
                         .iso2(sparseCountryInfo.iso2()).build()).toList();
     }
 
     public static Country from(SparseCountryInfo sparseCountryInfo) {
         return Country.builder()
                 .name(sparseCountryInfo.name())
-                .unicodeFlag(sparseCountryInfo.unicodeFlag())
+                .flagUrl(sparseCountryInfo.flagUrl())
                 .iso2(sparseCountryInfo.iso2()).build();
     }
 
@@ -71,6 +72,6 @@ public record Country(
     ) {
     }
 
-    public record SparseCountryInfo(String name, String iso2, String iso3, String unicodeFlag) {
+    public record SparseCountryInfo(String name, String iso2, String iso3, @JsonAlias("flag") String flagUrl) {
     }
 }
