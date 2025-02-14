@@ -2,7 +2,6 @@ package com.demo.country_flag_api.models;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 
 import java.util.List;
@@ -12,43 +11,43 @@ import java.util.List;
 public record Country(
         double gdp,
         String flagUrl,
-        @JsonProperty("sex_ratio") double sexRatio,
-        @JsonProperty("surface_area") double surfaceArea,
-        @JsonProperty("life_expectancy_male") double lifeExpectancyMale,
+        @JsonAlias("sex_ratio") double sexRatio,
+        @JsonAlias("surface_area") double surfaceArea,
+        @JsonAlias("life_expectancy_male") double lifeExpectancyMale,
         double unemployment,
         double imports,
-        @JsonProperty("homicide_rate") double homicideRate,
+        @JsonAlias("homicide_rate") double homicideRate,
         Currency currency,
         String iso2,
-        @JsonProperty("employment_services") double employmentServices,
-        @JsonProperty("employment_industry") double employmentIndustry,
-        @JsonProperty("urban_population_growth") double urbanPopulationGrowth,
-        @JsonProperty("secondary_school_enrollment_female") double secondarySchoolEnrollmentFemale,
-        @JsonProperty("employment_agriculture") double employmentAgriculture,
+        @JsonAlias("employment_services") double employmentServices,
+        @JsonAlias("employment_industry") double employmentIndustry,
+        @JsonAlias("urban_population_growth") double urbanPopulationGrowth,
+        @JsonAlias("secondary_school_enrollment_female") double secondarySchoolEnrollmentFemale,
+        @JsonAlias("employment_agriculture") double employmentAgriculture,
         String capital,
-        @JsonProperty("co2_emissions") double co2Emissions,
-        @JsonProperty("forested_area") double forestedArea,
+        @JsonAlias("co2_emissions") double co2Emissions,
+        @JsonAlias("forested_area") double forestedArea,
         double tourists,
         double exports,
-        @JsonProperty("life_expectancy_female") double lifeExpectancyFemale,
-        @JsonProperty("post_secondary_enrollment_female") double postSecondaryEnrollmentFemale,
-        @JsonProperty("post_secondary_enrollment_male") double postSecondaryEnrollmentMale,
-        @JsonProperty("primary_school_enrollment_female") double primarySchoolEnrollmentFemale,
-        @JsonProperty("infant_mortality") double infantMortality,
-        @JsonProperty("gdp_growth") double gdpGrowth,
-        @JsonProperty("threatened_species") double threatenedSpecies,
+        @JsonAlias("life_expectancy_female") double lifeExpectancyFemale,
+        @JsonAlias("post_secondary_enrollment_female") double postSecondaryEnrollmentFemale,
+        @JsonAlias("post_secondary_enrollment_male") double postSecondaryEnrollmentMale,
+        @JsonAlias("primary_school_enrollment_female") double primarySchoolEnrollmentFemale,
+        @JsonAlias("infant_mortality") double infantMortality,
+        @JsonAlias("gdp_growth") double gdpGrowth,
+        @JsonAlias("threatened_species") double threatenedSpecies,
         double population,
-        @JsonProperty("urban_population") double urbanPopulation,
-        @JsonProperty("secondary_school_enrollment_male") double secondarySchoolEnrollmentMale,
+        @JsonAlias("urban_population") double urbanPopulation,
+        @JsonAlias("secondary_school_enrollment_male") double secondarySchoolEnrollmentMale,
         String name,
-        @JsonProperty("pop_growth") double popGrowth,
+        @JsonAlias("pop_growth") double popGrowth,
         String region,
-        @JsonProperty("pop_density") double popDensity,
-        @JsonProperty("internet_users") double internetUsers,
-        @JsonProperty("gdp_per_capita") double gdpPerCapita,
+        @JsonAlias("pop_density") double popDensity,
+        @JsonAlias("internet_users") double internetUsers,
+        @JsonAlias("gdp_per_capita") double gdpPerCapita,
         double fertility,
         double refugees,
-        @JsonProperty("primary_school_enrollment_male") double primarySchoolEnrollmentMale
+        @JsonAlias("primary_school_enrollment_male") double primarySchoolEnrollmentMale
 ) {
 
     public static List<Country> from(List<SparseCountryInfo> data) {
