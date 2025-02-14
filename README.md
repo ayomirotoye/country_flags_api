@@ -33,7 +33,7 @@ This API allows you to retrieve data about countries, such as their names, flags
 
 ### Running the Dockerized Application
 
-1. Build the Docker image: `docker build -t country-info-api .` (Make sure you are in the project directory containing the `Dockerfile`)
+1. Build the Docker image (specify the url upon which the frontend is running): `docker build --build-arg ALLOWED_ORIGINS=http://localhost:5173 -t country-info-api .` (Make sure you are in the project directory containing the `Dockerfile`)
 2. Run the Docker container: `docker run -p 8080:8080 country-info-api` (This maps port 8080 on your host machine to port 8080 in the container)
 
 ## API Endpoints

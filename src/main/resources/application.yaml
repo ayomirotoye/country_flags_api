@@ -16,5 +16,6 @@ api:
     #This is not best practice. API Keys should not be in the property file. It should be set in secrets
     api-ninja-key: ${API_NINJA_KEY:gbbRJspHBSE7eVWOtWzuaQ==pgFOb5TC7i0pkHlW}
 cors:
-  #For production, specific origins should be specified
-  originPatterns: "*"
+  #For production, specific origins should be specified. You should specify the url
+  #upon which the api client is running
+  originPatterns: ${ALLOWED_ORIGINS:http://localhost:5173}
